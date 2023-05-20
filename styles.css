@@ -18,7 +18,7 @@ body {
     width: 800px;
     height: 300px;
     padding-top: 50px;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .slide {
@@ -38,6 +38,29 @@ body {
     display: flex;
     justify-content: center;
     gap: 5px;
+}
+
+.arrow {
+    position: absolute;
+    height: 30px;
+    padding: 0 18px;
+    width: auto;
+    opacity: 80%;
+    transition: all 0.2s ease-in-out;
+}
+
+.arrow:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.arrow.left {
+    top:50%;
+}
+
+.arrow.right {
+    top: 50%;
+    right: 0;
 }
 
 .dot {
