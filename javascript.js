@@ -40,6 +40,25 @@ rightArrow.addEventListener("click", (e) => {
   });
 });
 
+function transitionForward() {
+  currentSlide += 1;
+}
+
+setInterval(() => {
+  currentSlide += 1;
+  for (let i = currentSlide; i < slides.length + 1; i++) {
+    slides.forEach((slide, index) => {
+      if (currentSlide === 4) {
+        slide.style.transform = `translate(${100 * index}%)`;
+        currentSlide = 0;
+      } else {
+        slide.style.transform = `translate(${100 * (index - currentSlide)}%)`;
+      }
+      updateActive(currentSlide);
+    });
+  }
+}, 5000);
+
 // Use left arrow to navigate
 const leftArrow = document.querySelector(".left");
 leftArrow.addEventListener("click", (e) => {
