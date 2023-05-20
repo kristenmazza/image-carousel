@@ -33,3 +33,17 @@ leftArrow.addEventListener("click", (e) => {
     }
   });
 });
+
+const dots = document.querySelectorAll(".dot");
+dots.forEach((dot, dotIdx) => {
+  dot.addEventListener("click", (e) => {
+    if (dotIdx === currentSlide) {
+      return;
+    }
+    slides.forEach((slide, index) => {
+      slide.style.transform = `translate(${100 * (index - dotIdx)}%)`;
+      console.log(slide.style.transform);
+      currentSlide = dotIdx;
+    });
+  });
+});

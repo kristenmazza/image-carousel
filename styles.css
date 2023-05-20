@@ -68,5 +68,15 @@ body {
     width: 15px;
     border-radius: 50%;
     background-color: rgb(255, 255, 249);
-    border: 1px solid rgb(19, 19, 19);
+    border: 1px solid rgb(59, 59, 59);
+    transition: all 0.2s ease-in-out;
+}
+
+.dot:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: rgb(59, 59, 59);
 }
